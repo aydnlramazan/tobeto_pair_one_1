@@ -35,15 +35,20 @@ class _MyNavigationState extends State<MyNavigation> {
       body: _pages[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
         unselectedIconTheme: const IconThemeData(color: Colors.black54),
-        items: const [
+        items: [
           BottomNavigationBarItem(
-              icon: Icon(Icons.person_pin_sharp), label: 'Başvurular'),
+              icon: Icon(Icons.find_in_page_sharp), label: 'Başvurular'),
           BottomNavigationBarItem(
               icon: Icon(Icons.cast_for_education), label: 'Eğitimler'),
           BottomNavigationBarItem(
-              icon: Icon(Icons.task_outlined), label: 'TOBETO'),
+            icon: Image.asset(
+              "assets/icons/tobeto_icon.png",
+              fit: BoxFit.cover,
+            ),
+            label: 'TOBETO',
+          ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.notifications_active), label: 'Duyurular'),
+              icon: Icon(Icons.newspaper), label: 'Duyurular'),
           BottomNavigationBarItem(
               icon: Icon(Icons.poll_outlined), label: 'Anketler'),
         ],

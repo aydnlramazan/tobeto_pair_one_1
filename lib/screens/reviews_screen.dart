@@ -12,21 +12,74 @@ class ReviewsScreen extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Değerlendirmeler"),
+          title: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  Navigator.pushReplacement(
+                    //pushReplacement geri butonu koymadan diğer sayfaya geçer!
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const FirstOne(),
+                    ),
+                  );
+                },
+                child: Image.asset("assets/images/appbar.png"),
+              ),
+            ],
+          ),
         ),
         drawer: const MyDrawer(),
         body: Center(
           child: Column(
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => FirstOne()));
-                },
-                child: Image.network(
-                  "https://s3-alpha-sig.figma.com/img/1169/3d72/e7f67c8a7cb1fa1ea55d66ad844e589f?Expires=1709510400&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=X~6wiAmnp3RC40ozLfGNXynfXm8aVVmMK9VPRoiPdjRy1NHljQl9EroctKlFuCvbTVQCRmd7CaRTGRm7C8nBR0RSvz7CfE4qMDF1Uhq69SAIY7wwfm0bfsaxoYXJjMbFiE4ygYrVTybR0JJCJ0T194NNyvnW9Irw5qx9m9dYqsQ0v10fGaABVhWwNFBpI1cbUzyIo-AIDsE~gDruR6vhWe2Sq6Md87X2c-2GvNtMukfxxv6qhyl9Qv7zcl2wTu8TPdVYZ4BVuUwpJ0dgrkBwV3cPDxHTPQEvJ6o9jVkrUQPkUv1dTOf04oIyt2vRVoIE6JPY4joi2PcNXhRU6~DniQ__",
-                  width: 144,
-                  height: 29.9,
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "Yetkinlik",
+                    style: TextStyle(color: Colors.purple, fontSize: 28),
+                  ),
+                  Text(
+                    "likleirni ücretsiz ölç,",
+                    style: TextStyle(fontSize: 28),
+                  ),
+                ],
+              ),
+              const Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    "bilgi",
+                    style: TextStyle(color: Colors.purple, fontSize: 28),
+                  ),
+                  Text(
+                    "lerini test et.",
+                    style: TextStyle(fontSize: 28),
+                  ),
+                ],
+              ),
+              Container(
+                decoration: BoxDecoration(
+                    gradient:
+                        LinearGradient(colors: [Colors.purple, Colors.pink])),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text(
+                      "Tobeto İşte Başarı Modeli",
+                      style: TextStyle(fontSize: 24, color: Colors.white),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        """  80 soru ile yetkinliklerini ölç,
+  önerilen eğitimeleri tamamla rozetini kazan""",
+                        style: TextStyle(color: Colors.white),
+                      ),
+                    ),
+                  ],
                 ),
               ),
               ReviewsWidget(

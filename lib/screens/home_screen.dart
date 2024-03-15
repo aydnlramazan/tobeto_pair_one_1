@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:tobeto_pair_one_1/widget/first_one.dart';
-
 import 'package:tobeto_pair_one_1/widget/my_drawer.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -19,11 +18,16 @@ class HomeScreen extends StatelessWidget {
                   //pushReplacement geri butonu koymadan diğer sayfaya geçer!
                   context,
                   MaterialPageRoute(
-                    builder: (context) => FirstOne(),
+                    builder: (context) => const FirstOne(),
                   ),
                 );
               },
-              child: Image.asset("assets/images/appbar.png"),
+              child: Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Image.asset(
+                  "assets/images/appbar.png",
+                ),
+              ),
             ),
           ],
         ),
@@ -81,7 +85,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       width: 400,
-                      height: 200,
+                      height: 150,
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(16),
@@ -128,7 +132,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       width: 400,
-                      height: 200,
+                      height: 150,
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(16),
@@ -175,7 +179,7 @@ class HomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.all(8.0),
                     child: Container(
                       width: 400,
-                      height: 200,
+                      height: 150,
                       decoration: const BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topRight: Radius.circular(16),

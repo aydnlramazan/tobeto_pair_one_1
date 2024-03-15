@@ -32,7 +32,7 @@ class PollScreen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
@@ -51,14 +51,14 @@ class PollScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              Text(
+              const Text(
                 'Seçkin',
                 style: TextStyle(
                     color: Colors.black87,
                     fontWeight: FontWeight.bold,
                     fontSize: 20),
               ),
-              Padding(
+              const Padding(
                 padding: EdgeInsets.only(top: 15.0),
                 child: Text(
                   'Yeni nesil öğrenme deneyimi ile Tobeto\nkariyer yolculuğunda senin yanında!',
@@ -69,10 +69,18 @@ class PollScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                 ),
               ),
-              SizedBox(
+              const SizedBox(
                 height: 15,
               ),
               Image.asset("assets/images/istkod.png"),
+              Column(
+                children: [
+                  Image.asset(("assets/images/poll.png")),
+                  const Text(
+                    "Atanmış herhangi bir anketiniz bulunmamaktadır.",
+                  )
+                ],
+              )
             ],
           ),
         ),
