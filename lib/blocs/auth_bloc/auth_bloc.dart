@@ -47,7 +47,18 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
           UserCredential userCredential =
               await _firebaseAuth.createUserWithEmailAndPassword(
                   email: event.email, password: event.password);
-        } on FirebaseAuthException catch (e) {}
+          await _firebaseFirestore
+              .collection(CollectionName.USERS)
+              .doc(userCredential.user!.uid)
+              .set({
+            'email': event.email,
+            'username': event.username, // Kullanıcı adını da Firestore'a kaydet
+            'registerDate': DateTime.now()
+          });
+          emit(Authenticated(user: userCredential.user));
+        } on FirebaseAuthException catch (e) {
+          emit(NotAuthenticated(errorMessage: e.message));
+        }
       },
     );
 

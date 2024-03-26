@@ -11,7 +11,7 @@ class StartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AuthBloc, AuthState>(builder: (context, state) {
-      if (state is Authenticated) return FirstOne();
+      if (state is Authenticated) return const FirstOne();
       return const AuthScreen();
     });
   }

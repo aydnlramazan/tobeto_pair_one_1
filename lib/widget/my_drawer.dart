@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tobeto_pair_one_1/blocs/auth_bloc/auth_bloc.dart';
 import 'package:tobeto_pair_one_1/blocs/auth_bloc/auth_event.dart';
+import 'package:tobeto_pair_one_1/screens/catalog_screen.dart';
+import 'package:tobeto_pair_one_1/screens/profile_screen.dart';
 import 'package:tobeto_pair_one_1/widget/first_one.dart';
 import 'package:tobeto_pair_one_1/screens/reviews_screen.dart';
-import 'package:tobeto_pair_one_1/screens/video_player_screen.dart';
 
 class MyDrawer extends StatelessWidget {
   const MyDrawer({super.key});
@@ -16,10 +18,11 @@ class MyDrawer extends StatelessWidget {
         padding: EdgeInsets.zero,
         children: <Widget>[
           const UserAccountsDrawerHeader(
+            arrowColor: Colors.purple,
             accountName: Text("user"),
             accountEmail: Text("email"),
             currentAccountPicture: CircleAvatar(
-              backgroundColor: Colors.white,
+              backgroundColor: Colors.white, //0xFF9933FF
               child: Text(
                 "RA",
                 style: TextStyle(fontSize: 40.0),
@@ -46,15 +49,16 @@ class MyDrawer extends StatelessWidget {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const VideoPlayerScreen(
-                            videoUrl: '',
-                          )));
+                      builder: (context) => const ProfileScreen()));
             },
           ),
           ListTile(
             title: const Text('Katalog'),
             onTap: () {
-              // Handle item 2 tap
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const CatalogScreen()));
             },
           ),
           ListTile(
@@ -66,16 +70,12 @@ class MyDrawer extends StatelessWidget {
           ListTile(
             title: const Text('Tobeto'),
             onTap: () {
-              // Handle item 2 tap
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const FirstOne()));
             },
           ),
-          const Divider(), // Add a divider
-          ListTile(
-            title: const Text('Settings'),
-            onTap: () {
-              // Handle settings tap
-            },
-          ),
+          // Add a divider
+
           const Divider(),
           ElevatedButton(
               onPressed: () {

@@ -12,5 +12,6 @@ class NotAuthenticated extends AuthState {
 
 class Authenticated extends AuthState {
   User? user;
+  
   Authenticated({this.user});
 }

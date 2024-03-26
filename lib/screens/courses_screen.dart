@@ -103,12 +103,15 @@ class MyHorizontalMenu extends StatelessWidget {
               },
               style: ElevatedButton.styleFrom(
                 backgroundColor: selectedIndex == index
-                    ? Color.fromARGB(
-                        141, 194, 1, 232) // Seçili öğe ise mavi arkaplan
-                    : const Color.fromARGB(
-                        175, 92, 255, 1), // Diğer öğeler gri arkaplan
+                    ? Color.fromARGB(141, 194, 1, 232)
+                    : const Color.fromARGB(175, 92, 255, 1),
               ),
-              child: Text(menuItems[index].toString()),
+              child: Text(
+                menuItems[index].toString(),
+                style: TextStyle(
+                    color:
+                        selectedIndex == index ? Colors.white : Colors.black),
+              ),
             ),
           ),
         ),

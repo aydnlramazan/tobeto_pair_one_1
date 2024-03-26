@@ -17,7 +17,7 @@ class ReviewsWidget extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-        width: 360,
+        width: 420,
         height: 80,
         decoration: const BoxDecoration(
           color: Colors.purple,
@@ -25,7 +25,10 @@ class ReviewsWidget extends StatelessWidget {
             Radius.circular(34),
           ),
           gradient: LinearGradient(
-            colors: [Colors.deepPurple, Colors.purpleAccent, Colors.purple],
+            colors: [
+              Color.fromRGBO(0, 210, 155, 1),
+              Color.fromARGB(255, 156, 39, 176)
+            ],
             begin: Alignment.centerLeft,
             end: Alignment.centerRight,
           ),

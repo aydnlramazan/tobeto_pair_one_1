@@ -15,20 +15,24 @@ class _AuthScreenState extends State<AuthScreen> {
   Widget build(BuildContext context) {
     Widget formWidget = _isLogin ? const LoginForm() : const RegisterForm();
     return Scaffold(
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            formWidget,
-            TextButton(
-              onPressed: () {
-                setState(() {
-                  _isLogin = !_isLogin;
-                });
-              },
-              child: Text(_isLogin ? " Yeni Kayıt Oluştur" : "Hemen Giriş Yap"),
-            ),
-          ],
+      body: Padding(
+        padding: const EdgeInsets.all(28.0),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              formWidget,
+              TextButton(
+                onPressed: () {
+                  setState(() {
+                    _isLogin = !_isLogin;
+                  });
+                },
+                child:
+                    Text(_isLogin ? " Yeni Kayıt Oluştur" : "Hemen Giriş Yap"),
+              ),
+            ],
+          ),
         ),
       ),
     );
